@@ -1,0 +1,224 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.input-control {
+  width: 100%;
+}
+.input {
+  --border: white;
+  --backround: rgba(255, 255, 255, 0.2);
+  --color: inherit;
+  --border-h: var(--primary);
+
+  padding: 15px 25px;
+  background-color: var(--backround);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+
+  color: var(--color);
+
+  transition: border-color 0.3s ease;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-color: var(--border-h);
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &._primary {
+    --border: var(--primary);
+    --backround: rgba(163, 200, 104, 0.05);
+    --color: inherit;
+    --border-h: var(--secondary);
+  }
+}
+.select {
+  position: relative;
+  width: 100%;
+
+  &._open {
+    .select-body {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    .select-input {
+      border-color: var(--border-h);
+    }
+    .select-btn {
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &._primary {
+    .select-item {
+      --border: var(--primary);
+      --backround: rgba(163, 200, 104, 0.05);
+      --background-h: rgba(163, 200, 104, 0.3);
+    }
+    .select-body {
+      --border: var(--primary);
+    }
+  }
+}
+.select-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+
+  .arrow {
+    display: block;
+    position: absolute;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+
+    transition: transform 0.3s ease;
+  }
+}
+.select-input {
+  pointer-events: none;
+}
+.select-body {
+  --border: white;
+  --background: white;
+  position: absolute;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  overflow: hidden;
+  height: 220px;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 10;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+.select-body-wrap {
+  max-height: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 6px; /* Округление бегунка */
+  }
+}
+.select-item {
+  --backround: rgba(255, 255, 255, 0.2);
+  --background-h: rgba(44, 52, 70, 0.3);
+  --color: black;
+
+  cursor: pointer;
+  user-select: none;
+  padding: 12px 25px;
+  background-color: var(--backround);
+  outline: none;
+  width: 100%;
+
+  color: var(--color);
+
+  transition: background-color 0.3s ease;
+
+  @include tablet {
+    padding: 10px 18px;
+  }
+  @include hover {
+    background-color: var(--background-h);
+  }
+}
+
+.check-wrapper {
+  position: relative;
+
+  &._primary {
+    .wpcf7-list-item-label {
+      --border: var(--primary);
+      --background: rgba(163, 200, 104, 0.05);
+    }
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+    &:checked + .wpcf7-list-item-label {
+      &::before {
+        background: url('@img/check-primary.svg') center / 75% auto no-repeat;
+        background-color: var(--background);
+      }
+    }
+  }
+
+  .wpcf7-list-item-label {
+    --border: white;
+    --background: rgba(255, 255, 255, 0.2);
+
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 15px;
+    cursor: pointer;
+
+    font-size: 14px;
+    color: var(--abbey);
+
+    a {
+      text-decoration: underline;
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background-color: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+  }
+}

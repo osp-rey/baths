@@ -1,0 +1,78 @@
+<aside>
+  <div class="modal" id="modal-brone">
+    <div class="modal__close" data-fancybox-close>
+      <svg>
+        <use xlink:href='img/icons/icons.svg#icon-close'></use>
+      </svg>
+    </div>
+    <div class="modal__body">
+      <div class="f-title modal__title">Забронировать</div>
+      <p class="modal__content">
+        Заполните форму и мы свяжемся с Вами в ближайшее время
+      </p>
+      <form action="#" class="modal__form">
+        <div class="input-control">
+          <input type="text" placeholder="Ваше имя" class="input _primary" />
+        </div>
+        <div class="input-control">
+          <input type="tel" placeholder="Ваш номер телефона" class="input _primary" />
+        </div>
+        <div class="input-control">
+          <input type="number" min="1" placeholder="Кол-во гостей" class="input _primary" />
+        </div>
+        <div class="input-control">
+          <input type="text" placeholder="Желаемая дата" class="input _primary" />
+        </div>
+        <div class="input-control">
+          <div class="select _primary">
+            <div class="select-btn">
+              <input
+                type="text"
+                placeholder="Выберите формат отдыха"
+                readonly
+                class="input select-input _primary"
+              />
+              <svg class="arrow">
+                <use xlink:href="img/icons/icons.svg#icon-arrow-bottom"></use>
+              </svg>
+            </div>
+            <div class="select-body">
+              <div class="select-body-wrap">
+                <div class="select-item">Формат отдыха 1</div>
+                <div class="select-item">Формат отдыха 2</div>
+                <div class="select-item">Формат отдыха 3</div>
+                <div class="select-item">Формат отдыха 4</div>
+                <div class="select-item">Формат отдыха 5</div>
+                <div class="select-item">Формат отдыха 6</div>
+                <div class="select-item">Формат отдыха 7</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="check-wrapper _primary">
+          <span class="wpcf7-form-control-wrap">
+            <span class="wpcf7-form-control wpcf7-acceptance">
+              <span class="wpcf7-list-item">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="acceptance-469"
+                  />
+                  <span class="wpcf7-list-item-label">
+                    <span>
+                      Я соглашаюсь с&nbsp;
+                      <a href="/personal-data" target="_blank">
+                        Правилами обработки персональных данных
+                      </a>
+                    </span>
+                  </span>
+                </label>
+              </span>
+            </span>
+          </span>
+        </div>
+        <button type="submit" class="btn-s">ЗАБРОНИРОВАТЬ</button>
+      </form>
+    </div>
+  </div>
+</aside>

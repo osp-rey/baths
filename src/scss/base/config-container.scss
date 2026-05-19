@@ -1,0 +1,20 @@
+:root {
+  --content-width: 1520px;
+  --content-width-big: 1720px;
+  --offset-width: 15px;
+  --container-width: calc(var(--content-width) + (var(--offset-width) * 2));
+  --container-width-big: calc(var(--content-width-big) + (var(--offset-width) * 2));
+}
+
+.container {
+  max-width: var(--container-width);
+  width: 100%;
+  padding: 0 var(--offset-width);
+  margin: 0 auto;
+}
+.container-big {
+  max-width: var(--container-width-big);
+  width: 100%;
+  padding: 0 var(--offset-width);
+  margin: 0 auto;
+}
