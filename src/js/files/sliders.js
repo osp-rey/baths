@@ -99,4 +99,76 @@ export default function sliders() {
       });
     });
   }
+
+  const formatSliders = document.querySelectorAll(".s-format__slider");
+
+  if (formatSliders.length) {
+    formatSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          prevEl: slider
+            .closest(".slider-wrapper")
+            .querySelector(".slider-arrow._prev"),
+          nextEl: slider
+            .closest(".slider-wrapper")
+            .querySelector(".slider-arrow._next"),
+        },
+        pagination: {
+          el: slider.closest(".slider-wrapper").nextElementSibling,
+          clickable: true,
+        },
+        on: {
+          touchStart: function (swiper, event) {
+            const isProductSlider = event.target.closest(
+              ".s-format__slide-gallery",
+            );
+            if (isProductSlider) {
+              swiper.allowTouchMove = false;
+            }
+          },
+          touchEnd: function (swiper) {
+            swiper.allowTouchMove = true;
+          },
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+        },
+      });
+    });
+  }
+
+  const slidersFormatGallery = document.querySelectorAll(
+    ".s-format__slide-gallery",
+  );
+
+  if (slidersFormatGallery.length) {
+    slidersFormatGallery.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 10,
+        navigation: {
+          prevEl: slider.querySelector(".slider-arrow._prev"),
+          nextEl: slider.querySelector(".slider-arrow._next"),
+        },
+        pagination: {
+          el: slider.querySelector(".slider-pagination-blur"),
+          clickable: true,
+        },
+      });
+    });
+  }
 }

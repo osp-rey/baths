@@ -91,23 +91,61 @@
 
 .slider-pagination {
   @include flex-center;
-  gap: 6px;
+  gap: 10px;
   margin-top: 20px;
+  @include tablet {
+    gap: 8px;
+  }
+
   .swiper-pagination-bullet {
     margin: 0 !important;
-    opacity: 0.5;
-    flex: 0 0 8px;
-    height: 8px;
-    border-radius: 12px;
-    background-color: var(--primary);
+    background-color: var(--gray);
+    opacity: 1;
+    border-radius: 3px !important;
+    width: 11px;
+    height: 11px;
+    transform: rotate(45deg);
 
-    transition:
-      opacity 0.3s ease,
-      flex 0.3s ease,
-      opacity 0.3s ease;
+    transition: background-color 0.3s ease;
 
     &.swiper-pagination-bullet-active {
-      flex-basis: 20px;
+      background-color: var(--primary);
+    }
+    @include hover {
+      background-color: var(--primary);
+    }
+
+    @include tablet {
+      width: 9px;
+      height: 9px;
+    }
+  }
+}
+
+.slider-pagination-blur {
+  @include flex-center;
+  gap: 6px;
+  padding: 5px 8px;
+  width: fit-content !important;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  .swiper-pagination-bullet {
+    margin: 0 !important;
+    background-color: white;
+    opacity: 0.3;
+    border-radius: 2px!important;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+
+    transition: opacity 0.3s ease;
+
+    @include hover {
+      opacity: 1;
+    }
+
+    &.swiper-pagination-bullet-active {
       opacity: 1;
     }
   }

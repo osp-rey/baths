@@ -2,16 +2,39 @@
 @use "../base/media" as *;
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 10px;
+  right: 0;
   padding: 20px 0px;
   color: white;
   z-index: 100;
 
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding 0.3s ease;
+
   @include laptop-min {
     padding: 10px 0px;
+  }
+
+  &._scroll {
+    background-color: var(--ecru);
+    padding: 10px 0px;
+    color: black;
+
+    @include laptop-min {
+      padding: 5px 0px;
+    }
+
+    .header__logo {
+      width: 70px;
+
+      @include tablet {
+        width: 60px;
+      }
+    }
   }
 
   transition:
@@ -154,6 +177,8 @@
     @include mobile {
       width: 65px;
     }
+
+    transition: width 0.3s linear;
 
     img {
       display: block;

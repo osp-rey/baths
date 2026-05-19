@@ -11,7 +11,12 @@
       margin-bottom: 50px;
     }
     @include laptop-min {
+      position: sticky;
+      top: 0;
+      background-color: white;
       margin-bottom: 30px;
+      padding: 10px 15px;
+      z-index: 10;
     }
   }
   &__nav-btn {
@@ -48,7 +53,6 @@
       color: var(--primary);
     }
     &._active {
-      pointer-events: none;
       color: var(--primary);
     }
 
@@ -91,6 +95,17 @@
         no-repeat;
     }
   }
+  &__tabs {
+    padding-bottom: 70px;
+    border-bottom: 1px solid var(--primary);
+
+    @include laptop-middle {
+      padding-bottom: 50px;
+    }
+    @include laptop-min {
+      padding-bottom: 30px;
+    }
+  }
   &__tab-title {
     margin-bottom: 70px;
     @include laptop-middle {
@@ -108,17 +123,6 @@
       }
       @include laptop-min {
         margin-bottom: 30px;
-      }
-    }
-    &:last-child {
-      padding-bottom: 70px;
-      border-bottom: 1px solid var(--primary);
-
-      @include laptop-middle {
-        padding-bottom: 50px;
-      }
-      @include laptop-min {
-        padding-bottom: 30px;
       }
     }
   }
@@ -306,5 +310,188 @@
       line-height: 140%;
       color: var(--abbey);
     }
+  }
+  &__block-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+
+    padding: 10px 15px;
+    backdrop-filter: blur(6px);
+    background-color: var(--ecru);
+    border-radius: 10px;
+    width: 800px;
+    max-width: 100%;
+
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--abbey);
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      transform: rotate(45deg);
+      background-color: var(--primary);
+    }
+  }
+  &__slider-wrapper {
+    & > .slider-arrow {
+      @include laptop-middle {
+        display: none;
+      }
+    }
+  }
+  &__slider {
+    width: 100%;
+    margin-top: 50px;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+
+    .slider-arrow {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      color: white;
+
+      top: 50%;
+      transform: translateY(-50%);
+
+      z-index: 10;
+
+      @include hover {
+        color: var(--primary);
+      }
+
+      &._prev {
+        left: 5px;
+      }
+      &._next {
+        right: 5px;
+      }
+
+      svg {
+        width: 20px;
+      }
+    }
+    .slider-pagination-blur {
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+    }
+  }
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: auto !important;
+  }
+  &__slide-gallery {
+    width: 100%;
+
+    .swiper-slide {
+      overflow: hidden;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      border-radius: 5px;
+      overflow: hidden;
+
+      @include hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+
+      img {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        transition: transform 0.3s linear;
+      }
+    }
+  }
+  &__slide-title {
+    font-family: "SKNigarRUS", sans-serif;
+    font-size: 30px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--secondary);
+    margin: 35px 0px 0px 0px;
+
+    @include laptop {
+      font-size: 26px;
+      margin-top: 25px;
+    }
+    @include tablet {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  }
+  &__slide-content {
+    margin: 25px 0px 15px 0px;
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+  &__slide-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+
+    div {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      transform: rotate(45deg);
+      border-radius: 2px;
+      background-color: var(--primary);
+    }
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: var(--primary);
+    }
+  }
+  &__slide-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 15px;
+    li {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      text-align: center;
+      font-size: 22px;
+
+      @include tablet {
+        font-size: 18px;
+        gap: 20px;
+      }
+    }
+  }
+  &__slide-btn {
+    width: 100%;
+    margin-top: 25px;
   }
 }

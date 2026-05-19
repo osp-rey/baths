@@ -9,9 +9,9 @@ export default function tab() {
         const allButtons = container
           .querySelector(".tabs-nav")
           .querySelectorAll("[data-tab-btn]");
-        const allTabs = container
-          .querySelector(".tabs-content")
-          .querySelectorAll("[data-tab]");
+        const allTabs = Array.from(
+          container.querySelector(".tabs-content").children,
+        ).filter((child) => child.hasAttribute("data-tab"));
 
         const currentTab = container.querySelector(`[data-tab="${tabId}"]`);
 
