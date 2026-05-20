@@ -12,6 +12,14 @@
     padding: 90px 0px !important;
   }
 
+  .slider-wrapper {
+    .slider-arrow {
+      @include hover {
+        color: white;
+      }
+    }
+  }
+
   &__nav {
     margin-bottom: 40px;
     @include laptop-min {

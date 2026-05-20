@@ -313,4 +313,41 @@ export default function sliders() {
       });
     });
   }
+
+  const promoSlider = document.querySelector(".s-promo__slider");
+
+  if (promoSlider) {
+    const swiper = new Swiper(promoSlider, {
+      speed: 900,
+      spaceBetween: 20,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 6500,
+      },
+      navigation: {
+        prevEl: promoSlider
+          .closest(".slider-wrapper")
+          .querySelector(".slider-arrow._prev"),
+        nextEl: promoSlider
+          .closest(".slider-wrapper")
+          .querySelector(".slider-arrow._next"),
+      },
+      pagination: {
+        el: promoSlider
+          .closest(".slider-wrapper")
+          .querySelector(".slider-pagination"),
+        clickable: true,
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
+        992: {
+          spaceBetween: 20,
+          slidesPerView: 3,
+        },
+      },
+    });
+  }
 }

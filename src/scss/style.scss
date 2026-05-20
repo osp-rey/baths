@@ -22,6 +22,7 @@
 @use "./ui/gallery-slider";
 @use "./ui/more-item";
 @use "./ui/note";
+@use "./ui/card-promo";
 
 // components
 @use "./components/header";
@@ -33,5 +34,7 @@
 @use "./components/s-price";
 @use "./components/s-menu";
 @use "./components/s-complex";
+@use "./components/s-promo";
+@use "./components/s-connect";
 
 @use "./components/footer";
