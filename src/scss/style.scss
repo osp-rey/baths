@@ -20,6 +20,8 @@
 @use "./ui/slider";
 @use "./ui/tab";
 @use "./ui/gallery-slider";
+@use "./ui/more-item";
+@use "./ui/note";
 
 // components
 @use "./components/header";
@@ -28,5 +30,8 @@
 @use "./components/s-preview";
 @use "./components/s-format";
 @use "./components/s-offer";
+@use "./components/s-price";
+@use "./components/s-menu";
+@use "./components/s-complex";
 
 @use "./components/footer";

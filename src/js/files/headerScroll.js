@@ -5,7 +5,10 @@ export default function headerScroll() {
     const formatNav = document.querySelector(".s-format__nav");
     let lastScrollTop = 0;
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", handlerScroll);
+
+    handlerScroll();
+    function handlerScroll() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       if (scrollTop > 0) {
@@ -14,15 +17,7 @@ export default function headerScroll() {
         header.classList.remove("_scroll");
       }
 
-      if (window.matchMedia("(max-width: 991px)").matches) {
-        if (formatNav) {
-          formatNav.style.top = header.clientHeight + "px";
-        }
-      } else if (formatNav.style.top) {
-        formatNav.style.top = "auto";
-      }
-
       lastScrollTop = scrollTop;
-    });
+    }
   }
 }

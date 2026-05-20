@@ -1,6 +1,8 @@
 import "../scss/style.scss";
 import buttonsNote from "./files/buttonsNote.js";
+import clickTarget from "./files/clickTarget.js";
 import headerScroll from "./files/headerScroll.js";
+import more from "./files/more.js";
 import handlerSelect from "./files/select.js";
 import sliders from "./files/sliders.js";
 import tab from "./files/tab.js";
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   tab();
   buttonsNote();
   headerScroll();
+  more();
+  clickTarget()
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,

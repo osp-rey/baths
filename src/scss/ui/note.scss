@@ -1,0 +1,38 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+.note {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin: 0 auto;
+
+  padding: 10px 15px;
+  backdrop-filter: blur(6px);
+  background-color: white;
+  border-radius: 10px;
+  max-width: 100%;
+
+  line-height: 140%;
+  color: var(--abbey);
+
+  @include tablet {
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    background-color: var(--primary);
+    margin-top: 5px;
+  }
+
+  &._ecru {
+    background-color: var(--ecru);
+  }
+}

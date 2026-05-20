@@ -15,7 +15,7 @@
   cursor: pointer;
   border: none;
   border-radius: 0;
-  padding: 15px 33px;
+  padding: 14px 33px;
   background: none;
   width: fit-content;
 
@@ -33,6 +33,10 @@
 
   @include desktop {
     font-size: 16px;
+  }
+  @include tablet {
+    font-size: 15px;
+    padding: 12px 25px;
   }
   @include hover {
     color: var(--color-h);
@@ -78,7 +82,7 @@
       bottom right,
       top right,
       top left;
-    background-size: calc(100% - 15px) 50%;
+    background-size: calc(100% - 15px) 60%;
     background-repeat: no-repeat;
   }
   &::after {
@@ -109,7 +113,7 @@
       bottom right,
       top right,
       top left;
-    background-size: calc(100% - 15px) 50%;
+    background-size: calc(100% - 15px) 60%;
     background-repeat: no-repeat;
   }
 }
@@ -128,7 +132,7 @@
   cursor: pointer;
   border: none;
   border-radius: 0;
-  padding: 14px 33px;
+  padding: 13px 33px;
   background-color: var(--background);
   border: 1px solid var(--border);
   width: fit-content;
@@ -153,6 +157,19 @@
   }
   @include desktop {
     font-size: 16px;
+  }
+  @include tablet {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  &._stroke-primary {
+    --background: rgba(0, 0, 0, 0.5);
+    --border: var(--primary);
+    --color: var(--primary);
+    --background-h: black;
+    --border-h: white;
+    --color-h: white;
   }
 }
 
@@ -185,6 +202,10 @@
     width: 95px;
     height: 95px;
   }
+  @include tablet {
+    width: 80px;
+    height: 80px;
+  }
 
   @include hover {
     color: var(--color-h);
@@ -199,6 +220,10 @@
     @include laptop-min {
       width: 35px;
       height: 35px;
+    }
+    @include tablet {
+      width: 32px;
+      height: 32px;
     }
   }
 }
@@ -217,10 +242,12 @@
   border: 1px solid var(--border);
   background-color: var(--background);
   padding: 12px;
-  width: fit-content;
+  width: fit-content !important;
   cursor: pointer;
   gap: 10px;
+  box-sizing: border-box;
 
+  color: var(--color);
   letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;
@@ -230,6 +257,12 @@
     color 0.3s ease,
     border-color 0.3s ease,
     background-color 0.3s ease;
+
+  @include tablet-min {
+    font-size: 14px;
+    gap: 8px;
+    padding: 10px 8px;
+  }
 
   @include hover {
     background-color: var(--background-h);
@@ -241,6 +274,11 @@
     }
   }
 
+  &._ap {
+    --border-h: var(--primary);
+    --background-h: var(--primary);
+    --color-h: var(--secondary);
+  }
   &._active {
     background-color: var(--background-h);
     border-color: var(--border-h);

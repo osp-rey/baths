@@ -1,0 +1,126 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-price {
+  overflow: hidden;
+  &__nav {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    width: fit-content !important;
+
+    @include desktop {
+      overflow: visible !important;
+    }
+    @include tablet {
+      gap: 10px;
+    }
+  }
+  &__table-wrap {
+    @include laptop-min {
+      margin: 0 -15px;
+      padding: 0 15px;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+  &__table {
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 30px;
+      width: 990px;
+    }
+    @include tablet {
+      width: 780px;
+    }
+    @include tablet-min {
+      width: 600px;
+      font-size: 14px;
+    }
+    @include mobile {
+      width: 550px;
+    }
+
+    [data-more-item] {
+      &:nth-child(-n + 5) {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  &__table-row {
+    display: flex;
+    gap: 40px;
+    padding: 30px 0px;
+    border-bottom: 1px solid var(--ecru);
+
+    @include laptop-min {
+      gap: 20px;
+    }
+    @include tablet-min {
+      gap: 15px;
+      padding: 15px 0px;
+    }
+
+    &._head {
+      border-color: var(--primary);
+      padding-top: 0;
+    }
+  }
+  &__table-item {
+    flex: 1;
+    &:first-child {
+      flex: 0 1 41%;
+      @include tablet {
+        flex-basis: 46%;
+      }
+    }
+    .name-head {
+      text-transform: uppercase;
+
+      color: var(--abbey);
+    }
+    .item-name {
+      font-family: "SKNigarRUS", sans-serif;
+      font-size: 26px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      @include tablet {
+        font-size: 24px;
+      }
+      @include tablet-min {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+    }
+    .item-content {
+      margin: 0;
+      color: var(--abbey);
+    }
+    .value {
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+      @include tablet-min {
+        font-size: 15px;
+      }
+    }
+  }
+  &__btn-more {
+    margin: 40px auto 0px auto;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+}

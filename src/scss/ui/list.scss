@@ -3,3 +3,26 @@
   margin: 0;
   list-style: none;
 }
+
+.point-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      transform: rotate(45deg);
+      background-color: var(--primary);
+    }
+  }
+}

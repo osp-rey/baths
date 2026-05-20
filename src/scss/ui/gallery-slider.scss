@@ -2,12 +2,19 @@
 @use '../base/media' as *;
 
 .gallery-slider {
+  @include tablet-min {
+    overflow: visible !important;
+  }
   .swiper-slide {
     width: 100%;
     overflow: hidden;
     aspect-ratio: 1/0.62;
     border-radius: 5px;
 
+    @include tablet-min {
+      width: 340px !important;
+      max-width: 100%;
+    }
     @include hover {
       img {
         transform: scale(1.08);

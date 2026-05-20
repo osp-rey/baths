@@ -1,0 +1,145 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-complex {
+  &__inside {
+    background-color: var(--ecru);
+  }
+  &__sect-head {
+    width: 1100px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .note {
+      margin: 30px auto 0px auto;
+      width: 760px;
+      max-width: 100%;
+      @include laptop-min {
+        margin-top: 20px;
+      }
+    }
+  }
+  &__slider {
+    width: 100%;
+  }
+  &__slide {
+    display: flex !important;
+    align-items: center;
+    gap: 60px;
+    box-sizing: border-box;
+    @include laptop {
+      gap: 40px;
+    }
+    @include laptop-middle {
+      gap: 30px;
+      align-items: start;
+    }
+    @include laptop-min {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__slide-gallery {
+    width: 820px;
+    flex-shrink: 0;
+    margin: 0 !important;
+
+    @include desktop {
+      width: 600px;
+    }
+    @include laptop-middle {
+      width: 500px;
+    }
+    @include laptop-min {
+      width: 700px;
+      max-width: 100%;
+    }
+
+    .swiper-slide {
+      aspect-ratio: 1/0.62;
+      overflow: hidden;
+      border-radius: 5px;
+
+      @include hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        transition: transform 0.3s linear;
+      }
+    }
+  }
+  &__slide-info {
+    flex: 0 1 500px;
+    @include laptop-min {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__slide-title {
+    font-family: "SKNigarRUS", sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--secondary);
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+  &__slide-list {
+    margin-top: 20px;
+    @include tablet {
+      margin-top: 15px;
+    }
+  }
+  &__slide-price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--primary);
+    .price {
+      font-size: 22px;
+      line-height: 140%;
+      @include tablet {
+        font-size: 18px;
+      }
+    }
+    .price-note {
+      color: var(--abbey);
+    }
+
+    @include tablet {
+      margin-top: 15px;
+      padding-top: 15px;
+    }
+  }
+  &__slide-btn {
+    margin-top: 20px;
+    @include tablet {
+      margin-top: 15px;
+    }
+  }
+  &__slide-content {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--abbey);
+    @include tablet {
+      margin-top: 15px;
+    }
+  }
+}

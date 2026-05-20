@@ -1,0 +1,110 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-offer {
+  .container {
+    @include tablet {
+      padding: 0;
+    }
+  }
+  &__wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 0 rgba(50, 71, 25, 0.4);
+    @include tablet {
+      border-radius: 0px;
+      background-position: top 0 right 0 !important;
+      background-size: auto 100% !important;
+    }
+  }
+  &__body {
+    padding: 80px 30px;
+    @include laptop-min {
+      padding: 50px 30px;
+    }
+    @include tablet {
+      padding: 50px 25px;
+    }
+  }
+  &__body-inside {
+    width: 750px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &__title {
+  }
+  &__content {
+    line-height: 140%;
+    text-align: center;
+    color: var(--abbey);
+    margin: 15px 0px 0px 0px;
+
+    @include tablet {
+      margin-top: 10px;
+    }
+  }
+  &__form {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    @include tablet {
+      margin-top: 20px;
+    }
+    @include tablet-min {
+      grid-template-columns: 1fr;
+    }
+
+    .input-control {
+      @media (min-width: 576px) {
+        &:nth-child(5) {
+          grid-column: 2 span;
+        }
+      }
+
+    }
+    .input {
+      @include tablet {
+        --backround: rgba(255, 255, 255, 0.8);
+      }
+    }
+    .select-body {
+      height: 176px;
+    }
+
+    .btn-s[type="submit"] {
+      width: 100%;
+    }
+  }
+  &__footer {
+    position: relative;
+    background-color: var(--secondary);
+    height: 50px;
+
+    @include tablet {
+      height: 45px;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+    }
+    &::before {
+      top: 5px;
+      height: 2px;
+      background-color: var(--ecru);
+    }
+    &::after {
+      height: 25px;
+      top: 15px;
+      background: url("@img/pattern-cross.svg") center / auto 100% repeat;
+
+      @include tablet {
+        height: 20px;
+      }
+    }
+  }
+}

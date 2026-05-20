@@ -78,4 +78,51 @@
       </form>
     </div>
   </div>
+  <div class="modal" id="modal-callback">
+    <div class="modal__close" data-fancybox-close>
+      <svg>
+        <use xlink:href='img/icons/icons.svg#icon-close'></use>
+      </svg>
+    </div>
+    <div class="modal__body">
+      <div class="f-title modal__title">Оставить заявку</div>
+      <p class="modal__content">
+        Заполните форму и мы свяжемся с Вами в ближайшее время
+      </p>
+      <form action="#" class="modal__form">
+        <div style="display: none;">
+          <input type="text" class="input-note">
+        </div>
+        <div class="input-control">
+          <input type="text" placeholder="Ваше имя" class="input _primary" />
+        </div>
+        <div class="input-control">
+          <input type="tel" placeholder="Ваш номер телефона" class="input _primary" />
+        </div>
+        <div class="check-wrapper _primary">
+          <span class="wpcf7-form-control-wrap">
+            <span class="wpcf7-form-control wpcf7-acceptance">
+              <span class="wpcf7-list-item">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="acceptance-469"
+                  />
+                  <span class="wpcf7-list-item-label">
+                    <span>
+                      Я соглашаюсь с&nbsp;
+                      <a href="/personal-data" target="_blank">
+                        Правилами обработки персональных данных
+                      </a>
+                    </span>
+                  </span>
+                </label>
+              </span>
+            </span>
+          </span>
+        </div>
+        <button type="submit" class="btn-s">ЗАБРОНИРОВАТЬ</button>
+      </form>
+    </div>
+  </div>
 </aside>

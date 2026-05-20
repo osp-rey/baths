@@ -13,20 +13,37 @@
   @include desktop-big {
     width: 60px;
   }
-  @include laptop-min {
-    width: 40px;
-  }
 
+  &._tl {
+    left: 0;
+    top: 0;
+    background: url("@img/corner-tl-white.svg") bottom 0 left 0 / 100% auto
+      no-repeat;
+  }
+  &._tr {
+    right: 0;
+    top: 0;
+    background: url("@img/corner-tr-white.svg") bottom 0 left 0 / 100% auto
+      no-repeat;
+  }
   &._bl {
     left: 0;
     bottom: 0;
     background: url("@img/corner-bl-white.svg") bottom 0 left 0 / 100% auto
       no-repeat;
+    &._ecru {
+      background: url("@img/corner-bl-ecru.svg") bottom 0 left 0 / 100% auto
+        no-repeat;
+    }
   }
   &._br {
     right: 0;
     bottom: 0;
     background: url("@img/corner-br-white.svg") bottom 0 left 0 / 100% auto
       no-repeat;
+    &._ecru {
+      background: url("@img/corner-br-ecru.svg") bottom 0 left 0 / 100% auto
+        no-repeat;
+    }
   }
 }

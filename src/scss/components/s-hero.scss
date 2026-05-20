@@ -31,6 +31,20 @@
     );
     z-index: -1;
   }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.0) 100%
+    );
+    z-index: -1;
+  }
 
   &__bg {
     position: absolute;
@@ -53,12 +67,23 @@
     align-items: start;
     justify-content: space-between;
     gap: 40px;
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
   }
   &__info {
     flex: 0 1 820px;
+    @include tablet {
+      flex: auto;
+      width: 100%;
+    }
   }
   &__title {
     text-align: start;
+    @include tablet-min {
+      text-align: center;
+    }
   }
   &__list {
     display: flex;
@@ -68,7 +93,7 @@
 
     li {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 10px;
       padding: 10px 20px;
       border-radius: 10px;
@@ -80,6 +105,11 @@
       @include tablet {
         font-size: 16px;
       }
+      @include tablet-min {
+        padding: 8px 12px;
+        width: 100%;
+        border-radius: 6px;
+      }
 
       &::before {
         content: "";
@@ -89,19 +119,14 @@
         height: 12px;
         transform: rotate(45deg);
         background-color: var(--primary);
-        border-radius: 3px;
-      }
-    }
-  }
-  &__play-mob {
-    margin-top: 20px;
+        border-radius: 2px;
+        margin-top: 4px;
 
-    @media (min-width: 768px) {
-      display: none;
-    }
-    @include tablet-min {
-      margin-left: auto;
-      margin-right: auto;
+        @include tablet-min {
+          width: 9px;
+          height: 9px;
+        }
+      }
     }
   }
   &__buttons {
@@ -115,17 +140,23 @@
       row-gap: 15px;
       margin-top: 25px;
     }
-  
-    .btn-s, .btn-m {
+    @include tablet-min {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .btn-s,
+    .btn-m {
       @include tablet-min {
-        width: 100%;
+        width: 205px;
+        max-width: 100%;
       }
     }
   }
   &__play {
     margin-top: 110px;
     @include tablet {
-      display: none;
+      margin: 0 auto;
     }
   }
 }

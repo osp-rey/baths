@@ -171,6 +171,15 @@
       --border: var(--primary);
       --background: rgba(163, 200, 104, 0.05);
     }
+
+    input[type="checkbox"] {
+      &:checked + .wpcf7-list-item-label {
+        &::before {
+          background: url("@img/check-primary.svg") center / 75% auto no-repeat;
+          background-color: var(--background);
+        }
+      }
+    }
   }
 
   input[type="checkbox"] {
@@ -183,7 +192,7 @@
 
     &:checked + .wpcf7-list-item-label {
       &::before {
-        background: url('@img/check-primary.svg') center / 75% auto no-repeat;
+        background: url("@img/check.svg") center / 75% auto no-repeat;
         background-color: var(--background);
       }
     }
