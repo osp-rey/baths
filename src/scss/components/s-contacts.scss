@@ -1,0 +1,47 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-contacts {
+  &__wrapper {
+    display: flex;
+    gap: 60px;
+  }
+  &__map {
+    flex: 1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  &__info {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    width: 640px;
+    flex-shrink: 0;
+    min-height: 500px;
+  }
+  &__address {
+  }
+  &__btn-map {
+    margin-top: 30px;
+  }
+  &__worktime {
+    font-size: 18px;
+    line-height: 140%;
+    margin-top: 15px;
+  }
+  &__tel {
+    display: block;
+    width: fit-content;
+    font-size: 22px;
+    line-height: 140%;
+    margin-top: 30px;
+
+    transition: color .3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+  }
+  .social {
+    margin-top: 20px;
+  }
+}

@@ -7,10 +7,13 @@
   aspect-ratio: 1/1;
   z-index: 1;
 
-  @media (max-width: 1780px) {
-    width: 90px;
+  @media (max-width: 1680px) {
+    width: 110px;
   }
   @include desktop-big {
+    width: 80px;
+  }
+  @include laptop-min {
     width: 60px;
   }
 

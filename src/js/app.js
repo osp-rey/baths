@@ -2,6 +2,8 @@ import "../scss/style.scss";
 import buttonsNote from "./files/buttonsNote.js";
 import clickTarget from "./files/clickTarget.js";
 import headerScroll from "./files/headerScroll.js";
+import inputmask from "./files/inputmask.js";
+import map from "./files/maps.js";
 import more from "./files/more.js";
 import handlerSelect from "./files/select.js";
 import sliders from "./files/sliders.js";
@@ -16,7 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonsNote();
   headerScroll();
   more();
-  clickTarget()
+  clickTarget();
+  inputmask();
+  map();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,
