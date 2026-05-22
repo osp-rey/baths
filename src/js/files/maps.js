@@ -44,7 +44,7 @@ export default function map() {
           iconLayout: "default#image",
           iconImageHref: iconHref,
           iconImageSize: [50, 50],
-          iconImageOffset: [-25, -35],
+          iconImageOffset: [-15, -25],
         };
       }
 

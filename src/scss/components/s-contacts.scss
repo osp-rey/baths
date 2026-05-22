@@ -5,11 +5,34 @@
   &__wrapper {
     display: flex;
     gap: 60px;
+    @include laptop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    @include laptop-min {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
   }
   &__map {
     flex: 1;
     border-radius: 5px;
     overflow: hidden;
+    min-height: 500px;
+    @include laptop {
+      flex: auto;
+      width: 100%;
+    }
+    @include laptop-min {
+      min-height: 450px
+    }
+    @include tablet {
+      min-height: 350px
+    }
+    @include mobile {
+      min-height: 300px
+    }
   }
   &__info {
     @include flex-center;
@@ -17,17 +40,31 @@
     text-align: center;
     width: 640px;
     flex-shrink: 0;
-    min-height: 500px;
+    padding: 40px;
+    border: 1px solid var(--primary);
+
+    @include laptop {
+      width: 100%;
+    }
+    @include tablet {
+      padding: 40px 20px;
+    }
   }
   &__address {
-  }
-  &__btn-map {
-    margin-top: 30px;
   }
   &__worktime {
     font-size: 18px;
     line-height: 140%;
     margin-top: 15px;
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+  &__btn-map {
+    margin-top: 30px;
+    @include tablet {
+      margin-top: 15px;
+    }
   }
   &__tel {
     display: block;
@@ -39,6 +76,9 @@
     transition: color .3s ease;
     @include hover {
       color: var(--primary);
+    }
+    @include tablet {
+      font-size: 20px;
     }
   }
   .social {

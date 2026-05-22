@@ -1,4 +1,5 @@
 import "../scss/style.scss";
+import burger from "./files/burger.js";
 import buttonsNote from "./files/buttonsNote.js";
 import clickTarget from "./files/clickTarget.js";
 import headerScroll from "./files/headerScroll.js";
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   clickTarget();
   inputmask();
   map();
+  burger();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,
