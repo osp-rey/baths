@@ -9,6 +9,7 @@ import more from "./files/more.js";
 import handlerSelect from "./files/select.js";
 import sliders from "./files/sliders.js";
 import tab from "./files/tab.js";
+import tabAnchors from "./files/tabAnchors.js";
 import videoBg from "./files/videoBg.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   inputmask();
   map();
   burger();
+  tabAnchors();
 
   Fancybox.bind("[data-fancybox]", {
     closeButton: false,

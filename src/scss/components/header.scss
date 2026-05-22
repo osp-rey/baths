@@ -8,7 +8,12 @@
   right: 0;
   z-index: 120;
 
-  &._scroll, &._small {
+  &._simple {
+    position: sticky;
+    top: 0;
+  }
+
+  &._scroll, &._small, &._simple {
     .header__inside {
       padding: 10px 0px;
       color: black;
@@ -168,6 +173,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
+    color: white;
 
     transition:
       transform 0.4s ease,

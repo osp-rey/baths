@@ -6,6 +6,13 @@ export default function burger() {
     const headerBurgerWrap = document.querySelector(".header__burger-wrap");
     const burgerOverlay = document.querySelector("#burger-overlay");
     const header = document.querySelector(".header");
+    const burgerAnchors = burger.querySelectorAll("a[href^='/#']");
+
+    burgerAnchors.forEach((anchor) => {
+      anchor.addEventListener("click", () => {
+        handleClose();
+      });
+    });
 
     document.addEventListener("click", () => {
       if (headerBurgerWrap.classList.contains("_open")) {

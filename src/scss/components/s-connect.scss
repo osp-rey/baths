@@ -1,5 +1,5 @@
-@use '../base/templates' as *;
-@use '../base/media' as *;
+@use "../base/templates" as *;
+@use "../base/media" as *;
 
 .s-connect {
   &__body {
@@ -12,6 +12,9 @@
 
     @include laptop-min {
       padding: 80px 20px;
+    }
+    @include tablet-min {
+      padding: 60px 25px;
     }
 
     &::before,
@@ -26,21 +29,16 @@
       }
       @include tablet-min {
         background-size: 180px auto !important;
+        display: none;
       }
     }
     &::before {
       background: url("@img/decor-left-secondary-big.svg") left 0 center / 285px
         auto no-repeat;
-      @include tablet-min {
-        background: url('@img/decor-top-secondary-big.svg') top 0 center / 180px auto no-repeat;
-      }
     }
     &::after {
-      background: url("@img/decor-right-secondary-big.svg") right 0 center / 285px
-        auto no-repeat;
-      @include tablet-min {
-        background: url('@img/decor-bottom-secondary-big.svg') bottom 0 center / 180px auto no-repeat;
-      }
+      background: url("@img/decor-right-secondary-big.svg") right 0 center /
+        285px auto no-repeat;
     }
   }
   &__body-inside {
