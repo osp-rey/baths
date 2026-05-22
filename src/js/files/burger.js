@@ -54,6 +54,8 @@ export default function burger() {
       document.body.classList.add("body-hidden");
       burger.classList.add("_open");
       burgerOverlay.classList.add("_active");
+
+      updateHeightBurger();
     }
     function handleClose() {
       header.classList.remove("_small");

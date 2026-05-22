@@ -151,7 +151,8 @@
     .btn-s,
     .btn-m {
       @include tablet-min {
-        width: 205px;
+        width: fit-content;
+        min-width: 210px;
         max-width: 100%;
       }
     }
