@@ -36,6 +36,7 @@
   }
   &__info {
     @include flex-center;
+    position: relative;
     flex-direction: column;
     text-align: center;
     width: 640px;
